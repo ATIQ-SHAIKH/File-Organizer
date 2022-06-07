@@ -1,11 +1,13 @@
 let fs = require("fs");
 let path = require("path");
+let utility = require("../src/utility");
+let types = utility.types;
+let destPath;
 
 function organizefn(dirPath){
-    let destPath;
     if (dirPath == undefined){
-        destPath = process.cwd();
-        return;
+        dirPath = process.cwd();
+        organizefn(dirPath);
     }else{
         let doesExist = fs.existsSync(dirPath);
         if(doesExist){

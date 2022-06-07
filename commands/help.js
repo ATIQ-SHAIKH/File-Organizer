@@ -1,6 +1,3 @@
-let fs = require("fs");
-let path = require("path");
-
 function helpfn(){
     console.log(`
     List of all commands:

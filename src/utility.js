@@ -5,3 +5,5 @@ utility.types = {
     documents: ["docx", "doc", "pdf", "xlsx", "xls", "odt", "ods", "odp", "odg", "odf", "txt", "ps", "tex"],
     app: ['exe', 'dmg', 'pkg', "deb"]
 }
+
+module.exports = {types:utility.types}
