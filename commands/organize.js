@@ -11,7 +11,6 @@ function organizefn(dirPath){
     }else{
         let doesExist = fs.existsSync(dirPath);
         if(doesExist){
-            console.log("Working....")
             destPath = path.join(dirPath, "organized_files");
             if (fs.existsSync(destPath) == true){
                 console.log("Organize folder already exists!")
@@ -43,7 +42,6 @@ function organizeHelper(dirPath, destPath){
 
 function getCategory(name){
     let ext = path.extname(name).slice(1);
-    // console.log(ext)
     for(let type in types){
         let cTypeArray = types[type];
         for(let i=0; i<cTypeArray.length; i++){
@@ -63,7 +61,7 @@ function sendFiles(childAddress, destPath, category){
     let filename = path.basename(childAddress);
     let destfilepath = path.join(categoryPath, filename);
     fs.copyFileSync(childAddress,destfilepath);
-    // fs.unlinkSync(childAddress);
+    // fs.unlinkSync(childAddress);                             
     console.log(filename,", copied!");
 }
 
